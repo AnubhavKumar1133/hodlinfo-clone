@@ -1,0 +1,19 @@
+version: '3'
+services:
+  db:
+    image: postgres:latest  # Use the PostgreSQL image
+    restart: always
+    volumes:
+      - ./data/db:/var/lib/postgresql/data  # PostgreSQL uses this path for its data
+    ports:
+      - "5432:5432"  # PostgreSQL default port is 5432
+    environment:
+      - POSTGRES_DB=trading_db  # Name of the database
+      - POSTGRES_USER=root  # Database username
+      - POSTGRES_PASSWORD=pass  # Database password
+
+  adminer:
+    image: adminer
+    restart: always
+    ports:
+      - 8081:8081  # Adminer will run on http://localhost:8081
