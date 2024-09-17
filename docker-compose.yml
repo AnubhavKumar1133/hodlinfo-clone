@@ -8,9 +8,9 @@ services:
     ports:
       - "5432:5432"  # PostgreSQL default port is 5432
     environment:
-      - POSTGRES_DB=trading_db  # Name of the database
-      - POSTGRES_USER=root  # Database username
-      - POSTGRES_PASSWORD=pass  # Database password
+      - POSTGRES_DB= # Name of the database
+      - POSTGRES_USER= # Database username
+      - POSTGRES_PASSWORD=  # Database password
 
   adminer:
     image: adminer
